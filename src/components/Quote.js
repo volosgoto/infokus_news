@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class Quote extends Component {
+class Quote extends Component {
   render() {
     return (
       <div>
@@ -9,3 +9,5 @@ export default class Quote extends Component {
     )
   }
 }
+
+export default Quote;
