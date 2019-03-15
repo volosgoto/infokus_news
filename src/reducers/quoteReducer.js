@@ -6,12 +6,14 @@ const initialState = {
 };
 
 export default function (state = initialState, action) {
-  switch (key) {
-    case value:
-
-      break;
+  switch (action.type) {
+    case GET_CATEGORY:
+      return {
+        ...state,
+        categories: action.payload
+      }
 
     default:
-      break;
+      return state;
   }
 }

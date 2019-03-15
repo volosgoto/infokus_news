@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
-import Quotes from './components/Quotes';
+import Categories from './components/Categories';
 import Quote from './components/Quote';
 import NotFound from './components/NotFound';
 
@@ -19,7 +19,7 @@ class App extends Component {
         <Router>
           <div className="container">
             <Switch>
-              <Route exact path="/" component={Quotes} />
+              <Route exact path="/" component={Categories} />
               <Route exact path="/category/:id" component={Quote} />
               <Route component={NotFound} />
             </Switch>

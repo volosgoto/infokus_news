@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 
-class Quotes extends Component {
+class Categories extends Component {
   render() {
     return (
       <div>
-        <h1>Quotes</h1>
+        <h1>Categories</h1>
       </div>
     )
   }
 }
-export default Quotes;
+export default Categories;
