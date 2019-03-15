@@ -11,7 +11,8 @@ class Categories extends Component {
 
   render() {
 
-    console.log(this.props);
+    console.log(this.props.categories.categories
+    );
     return (
       <div>
         <h1>Categories</h1>
