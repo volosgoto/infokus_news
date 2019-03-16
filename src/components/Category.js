@@ -11,8 +11,12 @@ class Categories extends Component {
     this.props.getCategories();
   }
 
+  // componentWillMount() {
+
+  // }
+
   render() {
-    console.log(this.props.categories.categories);
+    console.log("this.props.categoties", this.props.categories.categories);
     return (
       <div>
         <Link to="/" className="nav-link">

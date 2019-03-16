@@ -1,37 +1,40 @@
-import { GET_CATEGORY, GET_QUOTE } from './types';
-import axios from 'axios';
+import { GET_CATEGORY, GET_QUOTE } from "./types";
+import axios from "axios";
 
+let URL = "https://jsonplaceholder.typicode.com/todos/1";
+// URL = "https://api.paperquotes.com/apiv1/quotes/";
+const token = "4ec061fa8bd74be205c4a98f5f3e7a14fe58a88c";
 
-
-fetch("https://api.paperquotes.com/apiv1/quotes/?tags=love&order=-likes", {
-  headers: {
-    Authorization: "Token {token_value}"
-  }
-})
+// export const getCategories = () => async dispatch => {
+//   await fetch(URL, {
+//     method: "GET",
+//     mode: "no-cors",
+//     headers: {
+//       Authorization: `token ${token}`
+//     }
+//   }).then(res => {
+//     const categories = res.data;
+//     dispatch({
+//       type: GET_CATEGORY,
+//       payload: categories
+//     });
+//   });
+// };
 
 export const getCategories = () => async dispatch => {
-  const res = await fetch("https://api.paperquotes.com/apiv1/quotes/?tags=love&order=-likes", {
+  fetch(URL, {
     headers: {
-      Authorization: "Token {I-8PFLK631WGRY}"
+      Authorization: `token ${token}`
     }
   })
-
-    .then(res => {
-      const categories = res.data;
-      dispatch({
-        type: GET_CATEGORY,
-        // payload: res.data
-        payload: categories
-      });
-    });
-
-
-}
+    .then(response => response.json())
+    .then(json => console.log(json));
+};
 
 export const getQuote = () => async dispatch => {
-  const res = await axios.get('');
+  const res = await axios.get("");
   dispatch({
     type: GET_QUOTE,
     payload: res.data
   });
-}
+};
