@@ -17,7 +17,6 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="container">
-          <h1>Home page</h1>
           <Router>
             <div className="container">
               <Switch>
