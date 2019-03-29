@@ -1,22 +1,20 @@
 import { GET_CATEGORIES } from "./types";
 import axios from "axios";
 
-// let URL = "https://theysaidso.p.rapidapi.com/categories.json?start=0";
-let URL = "https://jsonplaceholder.typicode.com/users";
+let API_KEY = "a91b290f83c64825bb4378ca84914ac8";
+let URL = `https://newsapi.org/v2/top-headlines?country=ua&apiKey=${API_KEY}`;
+// let URL = "https://jsonplaceholder.typicode.com/users";
 
 export const getCategories = () => async dispatch => {
   return await axios
-    .get(URL, {
-      header: {
-        // "X-RapidAPI-Key": "12674d6409msh29e09cf2c5c866ep1568d6jsnfab1189491e3"
-        "X-RapidAPI-Key": "12674d6409msh29e09cf2c5c866ep1568d6jsnfab1189491e3"
-      }
-    })
+    .get(URL)
     .then(res => {
-      console.log(res.data);
+      // console.log("res data", res.data);
+      let categories = res.data.articles;
       dispatch({
         type: GET_CATEGORIES,
-        payload: res.data
+        payload: categories
       });
-    });
+    })
+    .catch(error => console.log("error", error));
 };
