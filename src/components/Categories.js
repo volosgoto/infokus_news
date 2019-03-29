@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { getCategories } from "../actions/quoteActions";
+import { getCategories } from "../actions/categoriesActions";
 import { connect } from "react-redux";
 
 class Categories extends Component {
@@ -9,7 +9,7 @@ class Categories extends Component {
   }
 
   render() {
-    console.log("this.props.ctegories", this.props.categories.categories);
+    // console.log("this.props.ctegories", this.props.categories.categories);
     return (
       <div>
         <h1>Categories</h1>

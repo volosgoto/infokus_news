@@ -16,14 +16,14 @@ class Categories extends Component {
   // }
 
   render() {
-    console.log("this.props.categoties", this.props.categories.categories);
+    // console.log("this.props.categoties", this.props.categories.categories);
     return (
       <div>
-        <Link to="/" className="nav-link">
+        {/* <Link to="/" className="nav-link">
           <i className="fa fa-angle-left fa-3x" />
         </Link>
         <h1>Category</h1>
-        <Quote />
+        <Quote /> */}
       </div>
     );
   }

@@ -1,7 +1,8 @@
 import { combineReducers } from "redux";
+import categoriesReducer from "./categoriesReducer";
 import quoteReducer from "./quoteReducer";
 
 export default combineReducers({
-  categories: quoteReducer,
-  quote: quoteReducer //  
+  categories: categoriesReducer
+  // quote: quoteReducer
 });

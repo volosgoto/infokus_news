@@ -15,20 +15,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <div className="container">
-          <Router>
-            <div className="container">
-              <Switch>
-                <Route exact path="/" component={Categories} />
-                <Route exact path="/:category" component={Category} />
-                <Route exact path="/category/:id" component={Quote} />
-                <Route component={NotFound} />
-              </Switch>
-            </div>
-          </Router>
-        </div>
-      </Provider>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Categories} />
+          <Route exact path="/category" component={Category} />
+          <Route exact path="/category/:id" component={Quote} />
+          <Route component={NotFound} />
+        </Switch>
+      </Router>
     );
   }
 }
