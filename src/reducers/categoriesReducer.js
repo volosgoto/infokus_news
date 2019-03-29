@@ -1,8 +1,8 @@
 import { GET_CATEGORIES } from "../actions/types";
 
-let initialState = null;
+let initialState = [];
 
-export default function(state = initialState, action) {
+export default function (state = initialState, action) {
   switch (action.type) {
     case GET_CATEGORIES:
       return action.payload;

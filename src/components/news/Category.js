@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Quote from "./Quote";
+import Quote from "../Quote";
 
-import { getCategories } from "../actions/quoteActions";
+import { getCategories } from "../../actions/quoteActions";
 import { connect } from "react-redux";
 
 class Categories extends Component {

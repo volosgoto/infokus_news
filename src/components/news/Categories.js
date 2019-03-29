@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getCategories } from "../actions/categoriesActions";
+import { getCategories } from "../../actions/categoriesActions";
 import { connect } from "react-redux";
 
 // {
@@ -34,13 +34,10 @@ class Categories extends Component {
         <div className="row">
           <div className="col-md-12">
             {categories && (
-              <ul>
+              <ul className="list-group">
                 {categories.map(category => {
-                  if (
-                    category.source.name !== "" &&
-                    category.source.name !== null
-                  )
-                    return <li key={category.publishedAt}>{category.title}</li>;
+                  if (category.source.name)
+                    return <li className="list-group-item" key={category.publishedAt}>{category.title}</li>;
                 })}
               </ul>
             )}
