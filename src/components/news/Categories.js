@@ -55,9 +55,16 @@ class Categories extends Component {
                       </p>
                       <p className="lead">{category.title}</p>
                       <p>{category.description}</p>
-                      {/* <img src={category.urlToImage} className="float-left img-thumbnail" alt="..." /> */}
-                      <img src={category.urlToImage} alt="..." className="img-fluid img-thumbnail" width="200" height="200" />
-                      <a href={category.url}> Читати на сайтi: {this.trimUrlHelper(category.url)}</a>
+
+
+                      <div className="row">
+                        <div clclassNamess="col-md-4"><img src={category.urlToImage} alt="..." className="img-fluid img-thumbnail" width="200" height="200" /></div>
+                        <div className="col-md-8">
+
+                          <p className="text-justify">{category.content}</p>
+                          <a href={category.url}> Читати на сайтi: {this.trimUrlHelper(category.url)}</a>
+                        </div>
+                      </div>
                     </li>);
                 })}
               </ul>
