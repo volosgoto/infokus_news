@@ -18,8 +18,8 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="container-fluid">
-          <Carousel></Carousel>
+        <div className="wrapper">
+          {/* <Carousel></Carousel> */}
           <Header></Header>
           <Switch>
             <Route exact path="/" component={Categories} />

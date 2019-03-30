@@ -30,17 +30,27 @@ class Categories extends Component {
     let { categories } = this.props;
     console.log("categories", categories);
     return (
-      <div className="container fluid">
+      <div className="container-fluid" style={{ border: '1px solid red' }}>
         <div className="row">
           <div className="col-md-12">
             {categories && (
-              <ul className="list-group">
+              <ul className="list-group" >
                 {categories.map(category => {
                   if (category.source.name)
-                    return <li className="list-group-item" key={category.publishedAt}>{category.title}</li>;
+                    return (<li className="list-group-item" key={category.publishedAt}>
+
+                      <p className="lead">{category.title}</p>
+                      <p>{category.description}</p>
+                      {/* <img src={category.urlToImage} className="float-left img-thumbnail" alt="..." /> */}
+                      <img src={category.urlToImage} alt="..." className="img-fluid img-thumbnail" width="200" height="200" />
+                      <a href={category.url}> Читати на сайтi: {category.author}</a>
+
+                    </li>);
+
                 })}
               </ul>
-            )}
+            )
+            }
           </div>
         </div>
       </div>
