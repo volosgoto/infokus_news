@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { getCategories } from "../../actions/categoriesActions";
 import { connect } from "react-redux";
+import Sidebar from '../layout/Sidebar';
 
 // {
 //   author: "https://www.facebook.com/narodna.pravda.ua/"
@@ -43,9 +44,13 @@ class Categories extends Component {
     return (
       <div className="container-fluid" style={{ border: '1px solid red' }}>
         <div className="row">
-          <div className="col-md-12">
+          <div className="col-md-2">
+            <Sidebar ></Sidebar>
+          </div>
+          <div className="col-md-10">
+            <h1>Останнi новини</h1>
             {categories && (
-              <ul className="list-group" >
+              <ul className="list-group " >
                 {categories.map(category => {
                   if (category.source.name)
                     return (<li className="list-group-item" key={category.publishedAt}>
@@ -58,13 +63,15 @@ class Categories extends Component {
 
 
                       <div className="row">
-                        <div clclassNamess="col-md-4"><img src={category.urlToImage} alt="..." className="img-fluid img-thumbnail" width="200" height="200" /></div>
-                        <div className="col-md-8">
-
+                        <div className="col-md-2">
+                          <img src={category.urlToImage} alt="..." className="img-fluid img-thumbnail" width="300" height="300" />
+                        </div>
+                        <div className="col-md-10 pl-0 ml-0">
                           <p className="text-justify">{category.content}</p>
                           <a href={category.url}> Читати на сайтi: {this.trimUrlHelper(category.url)}</a>
                         </div>
                       </div>
+
                     </li>);
                 })}
               </ul>
