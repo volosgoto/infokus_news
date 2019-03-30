@@ -43,7 +43,7 @@ class Categories extends Component {
                       <p>{category.description}</p>
                       {/* <img src={category.urlToImage} className="float-left img-thumbnail" alt="..." /> */}
                       <img src={category.urlToImage} alt="..." className="img-fluid img-thumbnail" width="200" height="200" />
-                      <a href={category.url}> Читати на сайтi: {category.author}</a>
+                      <a href={category.url}> Читати на сайтi: {category.url}</a>
 
                     </li>);
 
