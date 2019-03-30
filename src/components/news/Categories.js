@@ -26,6 +26,11 @@ class Categories extends Component {
     this.props.getCategories();
   }
 
+  trimUrlHelper = (url) => {
+    let [, , trimUrl] = url.split('/');
+    return trimUrl;
+  }
+
   render() {
     let { categories } = this.props;
     console.log("categories", categories);
@@ -38,15 +43,12 @@ class Categories extends Component {
                 {categories.map(category => {
                   if (category.source.name)
                     return (<li className="list-group-item" key={category.publishedAt}>
-
                       <p className="lead">{category.title}</p>
                       <p>{category.description}</p>
                       {/* <img src={category.urlToImage} className="float-left img-thumbnail" alt="..." /> */}
                       <img src={category.urlToImage} alt="..." className="img-fluid img-thumbnail" width="200" height="200" />
-                      <a href={category.url}> Читати на сайтi: {category.url}</a>
-
+                      <a href={category.url}> Читати на сайтi: {this.trimUrlHelper(category.url)}</a>
                     </li>);
-
                 })}
               </ul>
             )
